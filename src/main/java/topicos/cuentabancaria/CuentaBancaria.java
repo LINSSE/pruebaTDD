@@ -12,4 +12,9 @@ public class CuentaBancaria {
 		
 	}
 
+	public void restarSaldo(int i) {
+		
+		this.saldo = this.saldo - i;
+	}
+
 }
