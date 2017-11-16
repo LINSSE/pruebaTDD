@@ -23,5 +23,13 @@ public class SaldoCeroTest {
 		int saldo = cb.getSaldo();
 		assertEquals(0, saldo);
 	}
+	@Test
+	public void añadirSaldo(){
+		CuentaBancaria cb = new CuentaBancaria();
+		
+		cb.añadirSaldo(20);
+		int saldo = cb.getSaldo();
+		assertEquals(20, saldo);
+	}
 
 }
