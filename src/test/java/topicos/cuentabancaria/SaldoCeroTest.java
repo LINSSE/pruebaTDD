@@ -8,8 +8,11 @@ import org.junit.Test;
 
 public class SaldoCeroTest {
 
+	private CuentaBancaria cb;
+
 	@Before
 	public void setUp() throws Exception {
+		cb = new CuentaBancaria();
 	}
 
 	@After
@@ -19,17 +22,26 @@ public class SaldoCeroTest {
 	@Test
 	public void saldoInicialCero()
 	{
-		CuentaBancaria cb = new CuentaBancaria();
+		
 		int saldo = cb.getSaldo();
 		assertEquals(0, saldo);
 	}
 	@Test
-	public void añadirSaldo(){
-		CuentaBancaria cb = new CuentaBancaria();
+	public void añadirSaldo(){//NOSONAR
 		
 		cb.añadirSaldo(20);
 		int saldo = cb.getSaldo();
 		assertEquals(20, saldo);
 	}
+	
+	@Test
+	public void restarSaldo(){
+		cb.restarSaldo(10);
+		int saldo = cb.getSaldo();
+		assertEquals(-10,saldo);
+		
+	}
+	
+
 
 }
