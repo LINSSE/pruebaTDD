@@ -60,6 +60,13 @@ public class SaldoCeroTest {
 		
 	}
 	
+	@Test
+	public void restarSaldoValido() throws Exception{
+		cb.añadirSaldo(40);
+		cb.restarSaldo(20);
+		assertEquals(20, cb.getSaldo());
+	}
+	
 
 
 }
