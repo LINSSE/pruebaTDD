@@ -35,10 +35,28 @@ public class SaldoCeroTest {
 	}
 	
 	@Test
-	public void restarSaldo(){
-		cb.restarSaldo(10);
-		int saldo = cb.getSaldo();
-		assertEquals(-10,saldo);
+	public void restarSaldo() throws Exception{
+		try {
+			cb.restarSaldo(10);
+						
+		} catch (Exception e) {
+			// TODO: handle exception
+			assertEquals(0,cb.getSaldo());
+		}
+		
+		
+	}
+	
+	@Test
+	public void restaSaldoSuperior(){
+		cb.añadirSaldo(30);
+		try {
+			cb.restarSaldo(40);
+		} catch (Exception e) {
+			assertEquals(30,cb.getSaldo());
+		}
+		
+	
 		
 	}
 	

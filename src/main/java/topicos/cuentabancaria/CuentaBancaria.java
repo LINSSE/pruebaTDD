@@ -12,9 +12,18 @@ public class CuentaBancaria {
 		
 	}
 
-	public void restarSaldo(int i) {
+	public void restarSaldo(int i) throws Exception {
 		
-		this.saldo = this.saldo - i;
+		if(this.saldo > i)
+		{
+			this.saldo = this.saldo - i;
+		}
+		else
+		{
+			throw new Exception("Saldo insuficiente");
+		}
 	}
+
+	
 
 }
